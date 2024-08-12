@@ -4,7 +4,7 @@ This a task
 """
 
 
-def add(a: float, b:float) -> float:
+def add(a: float, b: float) -> float:
     """
     This function takes two float numbers as input and returns their sum.
 
