@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 
-def sum_list(input_list: str) -> float:
+"""
+    List of floats
+"""
+
+from typing import List
+
+
+def sum_list(input_list: List[float]) -> float:
     """
     Calculate the sum of all elements in the input list.
 
