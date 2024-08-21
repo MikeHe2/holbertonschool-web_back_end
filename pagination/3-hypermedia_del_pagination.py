@@ -44,8 +44,10 @@ class Server:
         Retrieves a hypermedia index page from the dataset.
 
         Args:
-            index (int, optional): The starting index of the page. Defaults to None.
-            page_size (int, optional): The maximum number of items in the page. Defaults to 10.
+            index (int, optional): The starting index of the page.
+            Defaults to None.
+            page_size (int, optional): The maximum number of items
+            in the page. Defaults to 10.
 
         Returns:
             dict: A dictionary containing the following information:
