@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
+
 """This is a task"""
+
 import asyncio
 import random
 from typing import Generator
 
-async def async_generator() -> Generator[float, None, None]:
+
+async def async_generator() -> Generator[float, None, None]: # type: ignore
     """
     Asynchronous generator that yields random floating-point numbers.
 
@@ -12,7 +15,7 @@ async def async_generator() -> Generator[float, None, None]:
         float: A random floating-point number between 0 and 10.
 
     Raises:
-        None
+s        None
 
     Returns:
         None
