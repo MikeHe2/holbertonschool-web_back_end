@@ -7,7 +7,8 @@ import random
 from typing import Generator
 
 
-async def async_generator() -> Generator[float, None, None]: # type: ignore
+async def async_generator() -> Generator[float, None, None]:  # type: ignore
+
     """
     Asynchronous generator that yields random floating-point numbers.
 
@@ -15,8 +16,7 @@ async def async_generator() -> Generator[float, None, None]: # type: ignore
         float: A random floating-point number between 0 and 10.
 
     Raises:
-s        None
-
+        None
     Returns:
         None
     """
