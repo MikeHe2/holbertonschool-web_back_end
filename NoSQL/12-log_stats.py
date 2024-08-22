@@ -13,7 +13,6 @@ def log_status():
     Retrieves the count of status check logs and prints it.
     """
 
-
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
     client = MongoClient('mongodb://127.0.0.1:27017')
@@ -35,6 +34,7 @@ def log_status():
     })
 
     print(f"{status_check} status check")
+
 
 if __name__ == "__main__":
     log_status()
