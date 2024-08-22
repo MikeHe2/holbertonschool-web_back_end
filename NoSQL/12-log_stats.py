@@ -36,4 +36,5 @@ def log_status():
 
     print(f"{status_check} status check")
 
-log_status()
+if __name__ == "__main__":
+    log_status()
