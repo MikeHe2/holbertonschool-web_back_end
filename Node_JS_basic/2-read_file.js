@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-async function countStudents(path) {
+function countStudents(path) {
   try {
     const listCS = [];
     const listSWE = [];
