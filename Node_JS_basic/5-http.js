@@ -15,11 +15,11 @@ const app = http.createServer(async (req, res) => {
     await countStudents(process.argv[2])
       .then((msg) => {
         dbInfo += msg;
-        res.end(dbInfo);  // Sending response to the client
+        res.end(dbInfo); // Sending response to the client
       })
       .catch((err) => {
         dbInfo += err.message;
-        res.end(dbInfo);  // Sending error response to the client
+        res.end(dbInfo); // Sending error response to the client
       });
   } else {
     res.statusCode = 404;
