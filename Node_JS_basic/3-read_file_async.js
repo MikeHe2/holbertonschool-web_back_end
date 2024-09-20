@@ -6,8 +6,12 @@ async function countStudents(path) {
     const listSWE = [];
 
     const file = await fs.promises.readFile(path, 'utf8');
-
     const rows = file.trim().split('\n');
+
+    // Verifica si el archivo tiene datos después de la primera línea
+    if (rows.length <= 1) {
+      return 'No students found';
+    }
 
     for (let i = 1; i < rows.length; i += 1) {
       const row = rows[i].split(',');
@@ -16,9 +20,13 @@ async function countStudents(path) {
       else if (row[3] === 'SWE') listSWE.push(row[0]);
     }
 
-    console.log(`Number of students: ${rows.length - 1}`);
-    console.log(`Number of students in CS: ${listCS.length}. List: ${listCS.join(', ')}`);
-    console.log(`Number of students in SWE: ${listSWE.length}. List: ${listSWE.join(', ')}`);
+    const studentSummary = [
+      `Number of students: ${rows.length - 1}`,
+      `Number of students in CS: ${listCS.length}. List: ${listCS.join(', ')}`,
+      `Number of students in SWE: ${listSWE.length}. List: ${listSWE.join(', ')}`,
+    ].join('\n');
+
+    return studentSummary;
   } catch (err) {
     throw new Error('Cannot load the database');
   }
