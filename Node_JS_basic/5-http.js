@@ -12,15 +12,14 @@ const app = http.createServer(async (req, res) => {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     let dbInfo = 'This is the list of our students\n';
-    await countStudents(process.argv[2])
-      .then((msg) => {
-        dbInfo += msg;
-        res.end(dbInfo); // Sending response to the client
-      })
-      .catch((err) => {
-        dbInfo += err.message;
-        res.end(dbInfo); // Sending error response to the client
-      });
+    try {
+      const studentsInfo = await countStudents(process.argv[2]);
+      dbInfo += studentsInfo;
+      res.end(dbInfo);
+    } catch (err) {
+      dbInfo += 'Cannot load the database';
+      res.end(dbInfo);
+    }
   } else {
     res.statusCode = 404;
     res.end('404 Not Found');
